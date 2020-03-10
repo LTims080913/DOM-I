@@ -41,6 +41,7 @@ const siteContent = {
 let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"])
 
+//nav links
 let links =  document.querySelector("nav").getElementsByTagName('a');
 console.log(links);
 links[0].textContent = siteContent.nav["nav-item-1"];
@@ -49,18 +50,20 @@ links[2].textContent = siteContent.nav["nav-item-3"];
 links[3].textContent = siteContent.nav["nav-item-4"];
 links[4].textContent = siteContent.nav["nav-item-5"];
 links[5].textContent = siteContent.nav["nav-item-6"];
-
+//new nav links
 const newLink = document.createElement("links");
 newLink.textContent = "Append";
 const parentElement = document.querySelector('nav');
 parentElement.append(newLink);
+newLink.style.color = 'green';
 
 const newLink2 = document.createElement("links");
 newLink2.textContent = "Prepend";
 const parentElement2 = document.querySelector('nav');
 parentElement2.prepend(newLink2);
+newLink2.style.color = 'green';
 
-
+//
 const DIA =  document.getElementsByTagName('h1');
 DIA[0].textContent = siteContent.cta["h1"];
 
@@ -120,6 +123,8 @@ contact.innerText = siteContent["contact"]["contact-h4"]
 
 const address = document.querySelector('.contact p:nth-of-type(1)' );
 address.innerText = siteContent.contact.address
+let wordsArray = siteContent.contact.address.split(" ");;
+document.querySelector('.contact p:nth-of-type(1)').innerHTML = wordsArray[0]+" "+wordsArray[1]+" "+wordsArray[2]+ " "+wordsArray[3]+ "<br>" + wordsArray[4] + wordsArray[5] ;
 
 const phone = document.querySelector('.contact p:nth-of-type(2)' );
 phone.innerText = siteContent.contact.phone;
@@ -137,8 +142,7 @@ navTextColor.forEach(element => {
   element.style.color = "green";
 })
 
-let wordsArray = siteContent.contact.address.split(" ");;
-document.querySelector('.contact p:nth-of-type(1)').innerHTML = wordsArray[0]+" "+wordsArray[1]+" "+wordsArray[2]+ " "+wordsArray[3]+ "<br>" + wordsArray[4] + wordsArray[5] ;
+
 
 
 
@@ -155,3 +159,5 @@ function mouseOut() {
 
 //button shaping
 document.querySelector('button').style.borderRadius = '15px';
+
+//
